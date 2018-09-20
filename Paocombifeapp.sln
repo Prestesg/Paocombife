@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{74AF57DB-7D4C-4BB4-BB03-32E9E32C0B4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PaocomBife", "WpfApp1\PaocomBife.csproj", "{74AF57DB-7D4C-4BB4-BB03-32E9E32C0B4B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityDatabase", "EntityDatabase\EntityDatabase.csproj", "{34289642-5593-4291-9E70-C0425ECD44B0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{74AF57DB-7D4C-4BB4-BB03-32E9E32C0B4B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74AF57DB-7D4C-4BB4-BB03-32E9E32C0B4B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74AF57DB-7D4C-4BB4-BB03-32E9E32C0B4B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34289642-5593-4291-9E70-C0425ECD44B0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34289642-5593-4291-9E70-C0425ECD44B0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34289642-5593-4291-9E70-C0425ECD44B0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34289642-5593-4291-9E70-C0425ECD44B0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

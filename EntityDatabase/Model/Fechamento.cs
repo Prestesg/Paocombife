@@ -8,7 +8,7 @@ namespace EntityDatabase.Model
 {
     class Fechamento
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public int Valor { get; set; }
         public DateTime DataFechamento { get; set; }
     }

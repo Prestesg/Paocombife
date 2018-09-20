@@ -8,9 +8,9 @@ namespace EntityDatabase.Model
 {
     class Venda
     {
-        public int id { get; set; }
-        public int IDProduto { get; set; }
+        public int ID { get; set; }
         public int Valor { get; set; }
         public DateTime DataVenda { get; set; }
+        public virtual Produto IDProduto { get; set; }
     }
 }

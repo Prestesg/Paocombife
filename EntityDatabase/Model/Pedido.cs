@@ -8,7 +8,7 @@ namespace EntityDatabase.Model
 {
     class Pedido
     {
-        public int id { get; set; }
-        public int IDProduto { get; set; }
+        public int ID { get; set; }
+        public virtual Produto IDProduto { get; set; }
     }
 }

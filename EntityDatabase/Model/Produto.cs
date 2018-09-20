@@ -8,7 +8,7 @@ namespace EntityDatabase.Model
 {
     class Produto
     {
-        public int id { get; set; }
+        public int ID { get; set; }
         public string Nome { get; set; }
         public int Preço { get; set; }
     }

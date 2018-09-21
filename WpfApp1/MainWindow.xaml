@@ -7,9 +7,17 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="Pedidos" Content="Registrar Pedido" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="50" Margin="213,0,0,0"/>
-        <Button x:Name="Cardapio" Content="Cardapio" HorizontalAlignment="Left" Margin="110,0,0,0" VerticalAlignment="Top" Width="103" Height="50"/>
-        <Button x:Name="Caixa" Content="Caixa" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="50" />
-        <DataGrid HorizontalAlignment="Left" Height="364" Margin="0,55,0,0" VerticalAlignment="Top" Width="792"/>
+        <Button x:Name="Pedidos" Content="Registrar Pedido" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="50" Margin="118,0,0,0" Click="Pedidos_Click"/>
+        <Button x:Name="Cardapio" Content="Cardapio" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="103" Height="50" Click="Cardapio_Click"/>
+        <Button x:Name="Fechamento" Content="Fechar Caixa" HorizontalAlignment="Left" Margin="689,0,0,0" VerticalAlignment="Top" Width="103" Height="50" Click="Fechamento_Click"/>
+        <ListView HorizontalAlignment="Left" Height="283" VerticalAlignment="Top" Width="464" Margin="328,50,0,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
     </Grid>
+
 </Window>

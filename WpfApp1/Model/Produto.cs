@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityDatabase.Model
+namespace Paocombife.Model
 {
     class Produto
     {

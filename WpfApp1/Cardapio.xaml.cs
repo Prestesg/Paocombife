@@ -10,31 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WpfApp1
+namespace PaocomBife
 {
-    public partial class MainWindow : Window
+    /// <summary>
+    /// Lógica interna para Cardapio.xaml
+    /// </summary>
+    public partial class Cardapio : Window
     {
-        public MainWindow()
+        public Cardapio()
         {
             InitializeComponent();
-        }
-
-        private void Cardapio_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        private void Pedidos_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Fechamento_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

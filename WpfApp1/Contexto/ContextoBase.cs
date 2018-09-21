@@ -1,4 +1,4 @@
-﻿using EntityDatabase.Model;
+﻿using PaocomBife.Model;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -6,13 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EntityDatabase.Contexto
+namespace PaocomBife.Contexto
 {
     class ContextoBase : DbContext 
     {
         public ContextoBase() : base("Default")
         {
-
         }
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }

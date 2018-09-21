@@ -1,0 +1,25 @@
+﻿<Window x:Class="PaocomBife.Cardapio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PaocomBife"
+        mc:Ignorable="d"
+        Title="Cardapio" Height="450" Width="587.766">
+    <Grid Margin="0,0,2,0">
+        <ListView HorizontalAlignment="Left" Height="347" Margin="10,62,0,0" VerticalAlignment="Top" Width="275">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Label Content="Nome do Produto" HorizontalAlignment="Left" Margin="285,62,0,0" VerticalAlignment="Top" Width="123"/>
+        <Label Content="Preço" HorizontalAlignment="Left" Margin="413,62,0,0" VerticalAlignment="Top" Width="123"/>
+        <TextBox x:Name="Produto" HorizontalAlignment="Left" Height="23" Margin="285,88,0,0" TextWrapping="Wrap" Text="Digite o nome aqui" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Preço" HorizontalAlignment="Left" Height="23" Margin="416,88,0,0" TextWrapping="Wrap" Text="Digite o preço aqui" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="Adicionar_Produto" Content="Adicionar Produto" HorizontalAlignment="Left" Margin="290,142,0,0" VerticalAlignment="Top" Width="115"/>
+        <Button x:Name="Excluir_Produto" Content="Excluir Produto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="285,167,0,0"/>
+
+    </Grid>
+</Window>

@@ -151,5 +151,11 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="meterias-eletivas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="marmitex.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

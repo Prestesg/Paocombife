@@ -5,18 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Janela Principal" Height="450" Width="800">
+
     <Grid>
         <Button x:Name="Pedidos" Content="Registrar Pedido" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="50" Margin="118,0,0,0" Click="Pedidos_Click"/>
         <Button x:Name="Cardapio" Content="Cardapio" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="103" Height="50" Click="Cardapio_Click"/>
         <Button x:Name="Fechamento" Content="Fechar Caixa" HorizontalAlignment="Left" Margin="689,0,0,0" VerticalAlignment="Top" Width="103" Height="50" Click="Fechamento_Click"/>
-        <ListView HorizontalAlignment="Left" Height="283" VerticalAlignment="Top" Width="464" Margin="328,50,0,0">
+        <ListView HorizontalAlignment="Left" Height="283" VerticalAlignment="Top" Width="464" Margin="318,50,0,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="Marmita" Tag="10"  HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+            <DockPanel Width="91">
+                <Image Source="marmitex.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" DockPanel.Dock="Top">
+                    <Image.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.004"/>
+                            <RotateTransform Angle="-0.082"/>
+                            <TranslateTransform Y="-0.001"/>
+                        </TransformGroup>
+                    </Image.RenderTransform>
+                </Image>
+                <Label x:Name="Valor" HorizontalAlignment="Left" Content="Valor" DockPanel.Dock="Bottom"/>
+                <Label x:Name="Produto" HorizontalAlignment="Center" Content="Marmita" DockPanel.Dock="Bottom" FontWeight="Bold" Height="24"/>
+            </DockPanel>
+        </Button>
+        <Button x:Name="BuffetLivre" Tag="12" Content="BuffetLivre" HorizontalAlignment="Left" Margin="114,61,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho"/>
+        <Button x:Name="ComboMarmita" Tag="15" Content="Combo" HorizontalAlignment="Left" Margin="221,61,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho"/>
+        <Button x:Name="Refrigerante1" Tag="2" Content="Refrigerante1" HorizontalAlignment="Left" Margin="10,162,0,0" VerticalAlignment="Top" Width="91" Height="65" Click="CarregarCarrinho"/>
+        <Button x:Name="Refrigerante2" Tag="5" HorizontalAlignment="Left" Margin="118,162,0,0" VerticalAlignment="Top" Width="74" Height="65" Click="CarregarCarrinho"/>
+        <Button x:Name="Refrigerante3" Tag="6,50" Content="Refrigerante3" HorizontalAlignment="Left" Margin="210,162,0,0" VerticalAlignment="Top" Width="74" Height="65" Click="CarregarCarrinho"/>
+        <TextBox x:Name="Total" HorizontalAlignment="Left" Height="62" Margin="510,338,0,0" TextWrapping="Wrap" Text="Total" VerticalAlignment="Top" Width="162"/>
 
     </Grid>
 

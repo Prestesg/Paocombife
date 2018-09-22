@@ -24,7 +24,7 @@ namespace WpfApp1
 
         private void Cardapio_Click(object sender, RoutedEventArgs e)
         {
-            
+            Cardapio.
         }
 
         private void Pedidos_Click(object sender, RoutedEventArgs e)
@@ -33,6 +33,11 @@ namespace WpfApp1
         }
 
         private void Fechamento_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void CarregarCarrinho(object sender, RoutedEventArgs e)
         {
 
         }

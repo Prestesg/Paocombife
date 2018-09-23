@@ -16,14 +16,14 @@ namespace PaocomBife.Controller
         {
             contexto = new ContextoBase();
         }
-
+        /*
         public Fechamento AddNewFechamento(int valor, Produto produto)
         {
-            var fechamento = new Fechamento { Valor = valor, DataFechamento = DateTime.Now };
+         /*  var fechamento = new Fechamento { Valor = valor, DataFechamento = DateTime.Now };
             contexto.Vendas.Add(fechamento);
             contexto.SaveChanges();
 
-            return fechamento;
-        }
+            return fechamento; 
+        }*/
     }
 }

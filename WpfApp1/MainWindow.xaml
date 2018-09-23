@@ -11,10 +11,7 @@
     </Window.Resources>
 
     <Grid>
-        <Button x:Name="Pedidos" Content="Registrar Pedido" HorizontalAlignment="Left" VerticalAlignment="Top" Width="110" Height="50" Margin="118,0,0,0" Click="Pedidos_Click"/>
-        <Button x:Name="Cardapio" Content="Cardapio" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Top" Width="103" Height="50" Click="Cardapio_Click"/>
-        <Button x:Name="Fechamento" Content="Fechar Caixa" HorizontalAlignment="Left" Margin="689,0,0,0" VerticalAlignment="Top" Width="103" Height="50" Click="Fechamento_Click"/>
-        <ListView x:Name="Carrinho" HorizontalAlignment="Left" Height="283" VerticalAlignment="Top" Width="464" Margin="318,50,0,0">
+        <ListView x:Name="Carrinho" Height="283" VerticalAlignment="Top" Margin="540,25,10,0">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Nome " DisplayMemberBinding="{Binding Nome}" Width="120"/>
@@ -22,7 +19,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="Produto" Tag="1"  HorizontalAlignment="Left" Margin="10,61,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Produto" Tag="1"  HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="marmitex.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -30,7 +27,7 @@
                 <Label x:Name="Valor" HorizontalAlignment="Left" Content="Valor: R$10" />
             </StackPanel>
         </Button>
-        <Button x:Name="BuffetLivre" Tag="2" HorizontalAlignment="Left" Margin="114,61,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="BuffetLivre" Tag="2" HorizontalAlignment="Left" Margin="114,36,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="meal.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -38,7 +35,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$12" />
             </StackPanel>
         </Button>
-        <Button x:Name="ComboMarmita" Tag="3" HorizontalAlignment="Left" Margin="221,61,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="ComboMarmita" Tag="3" HorizontalAlignment="Left" Margin="221,36,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="feb-food-go-06-512.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -46,7 +43,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$15" />
             </StackPanel>
         </Button>
-        <Button x:Name="Refrigerante1" Tag="4"  HorizontalAlignment="Left" Margin="10,152,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Refrigerante1" Tag="4"  HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="Refresco_+1.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -54,7 +51,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$2" />
             </StackPanel>
         </Button>
-        <Button x:Name="Refrigerante2" Tag="5"  HorizontalAlignment="Left" Margin="114,152,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Refrigerante2" Tag="5"  HorizontalAlignment="Left" Margin="114,127,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="Refresco_+2.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -62,7 +59,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$4" />
             </StackPanel>
         </Button>
-        <Button x:Name="Refrigerante3" Tag="6"  HorizontalAlignment="Left" Margin="221,152,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Refrigerante3" Tag="6"  HorizontalAlignment="Left" Margin="221,127,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="Refresco_+3.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -70,20 +67,30 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$6" />
             </StackPanel>
         </Button>
-        <Label Content="Desconto" HorizontalAlignment="Left" Margin="447,334,0,0" VerticalAlignment="Top"/>
-        <Label Content="Pago" HorizontalAlignment="Left" Margin="447,360,0,0" VerticalAlignment="Top" Width="55"/>
-        <TextBox x:Name="Desconto" HorizontalAlignment="Left" Height="16" Margin="507,338,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" KeyDown="QuandoapertarEnterDescontar"/>
-        <TextBox x:Name="Pago" HorizontalAlignment="Left" Height="16" Margin="507,365,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="50" KeyDown="QuandoapertarEnterPago"/>
-        <Button Content="Remover do carrinho" HorizontalAlignment="Left" Margin="318,338,0,0" VerticalAlignment="Top" Width="118" Height="43" Click="DescarregarCarrinho"/>
-        <Label Content="Total" HorizontalAlignment="Left" Margin="568,365,0,0" VerticalAlignment="Top" Height="31" Width="48"/>
-        <TextBox x:Name="Total" Text="0" HorizontalAlignment="Left" Height="22" Margin="633,363,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
-        <Label Content="Sub-Total" HorizontalAlignment="Left" Margin="568,336,0,0" VerticalAlignment="Top" Height="31" Width="60"/>
-        <TextBox x:Name="Subtotal" Text="0" HorizontalAlignment="Left" Height="22" Margin="633,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False" RenderTransformOrigin="1.258,0.636"/>
-        <Label Content="Troco" HorizontalAlignment="Left" Margin="469,381,0,0" VerticalAlignment="Top"/>
-        <TextBox x:Name="Troco" Text="0" HorizontalAlignment="Left" Height="22" Margin="508,386,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+        <Label Content="Desconto" HorizontalAlignment="Left" Margin="566,315,0,0" VerticalAlignment="Top"/>
+        <Label Content="Pago" HorizontalAlignment="Left" Margin="566,341,0,0" VerticalAlignment="Top" Width="55"/>
+        <TextBox x:Name="Desconto" HorizontalAlignment="Left" Height="16" Margin="626,319,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="50" KeyDown="QuandoapertarEnterDescontar"/>
+        <TextBox x:Name="Pago" HorizontalAlignment="Left" Height="16" Margin="626,346,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="50" KeyDown="QuandoapertarEnterPago"/>
+        <Button Content="Remover do carrinho" HorizontalAlignment="Left" Margin="396,281,0,0" VerticalAlignment="Top" Width="119" Height="27" Click="DescarregarCarrinho"/>
+        <Label Content="Total" HorizontalAlignment="Left" Margin="689,340,0,0" VerticalAlignment="Top" Height="31" Width="48" RenderTransformOrigin="0.667,0.226"/>
+        <TextBox x:Name="Total" Text="0" HorizontalAlignment="Left" Height="22" Margin="752,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
+        <Label Content="Sub-Total" HorizontalAlignment="Left" Margin="687,312,0,0" VerticalAlignment="Top" Height="31" Width="60"/>
+        <TextBox x:Name="Subtotal" Text="0" HorizontalAlignment="Left" Height="22" Margin="752,313,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False" RenderTransformOrigin="1.258,0.636"/>
+        <Label Content="Troco" HorizontalAlignment="Left" Margin="583,367,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="Troco" Text="0" HorizontalAlignment="Left" Height="22" Margin="627,371,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
         <Button x:Name="Compra" Content="Finalizar Compra" HorizontalAlignment="Left" VerticalAlignment="Top" Width="93" Margin="689,381,0,0" Height="28" Click="FinalizaCompra"/>
+        <Menu x:Name="Menuprincipal" Margin="0,0,0,396">
+            <MenuItem x:Name="inCardapio" Header="Cardapio" Click="inCardapio_Click" />
+           <!--* <MenuItem x:Name="inPedido" Header="Pedidos" Click="inPedido_Click" />*--> 
+            <MenuItem x:Name="inFechamento" Header="Fechar Caixa" HorizontalAlignment="Right" Click="inFechamento_Click" />
+        </Menu>
 
-
+        <Button x:Name="Voltar" HorizontalAlignment="Left" Margin="540,367,0,0" VerticalAlignment="Top" Width="43" Height="42"  Background="#00DDDDDD" BorderBrush="#02000000" Click="Voltar_Click">
+            <StackPanel Width="91">
+                <Image Source="Voltar.png" VerticalAlignment="Top"  RenderTransformOrigin="0.5,0.5" Height="32" Margin="0,0,56,0" HorizontalAlignment="Right" Width="35" >
+                </Image>
+            </StackPanel>
+        </Button>
     </Grid>
 
 </Window>

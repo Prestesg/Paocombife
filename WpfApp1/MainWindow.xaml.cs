@@ -1,4 +1,5 @@
 ﻿using Paocombife.Model;
+using PaocomBife;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -14,6 +15,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Fechamento = PaocomBife.Fechamento;
 
 namespace WpfApp1
 {
@@ -31,27 +33,11 @@ namespace WpfApp1
             InitializeComponent();
 
             produtos = new List<Produto>();
-
+            //Mandas Carregar Lista de Produtos PARA EXIBIR BOTÕES
             Produto marmita = new Produto();
             marmita.Nome = "Marmita";
             marmita.Preço = 15;
-
             produtos.Add(marmita);
-        }
-
-        private void Cardapio_Click(object sender, RoutedEventArgs e)
-        {
-         
-        }
-
-        private void Pedidos_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Fechamento_Click(object sender, RoutedEventArgs e)
-        {
-
         }
 
         private void CarregarCarrinho(object sender, RoutedEventArgs e)
@@ -176,7 +162,54 @@ namespace WpfApp1
 
         private void FinalizaCompra(object sender, RoutedEventArgs e)
         {
+            var subtotal = Int32.Parse(Subtotal.Text);
+            var total = Int32.Parse(Total.Text);
+          var desconto = Int32.Parse(Desconto.Text);
+            var pago = Int32.Parse(Pago.Text);
 
+            foreach (var produto in Carrinho.Items.OfType<Produto>())
+            {
+                //MANDAR FAZER QUERY DE INSERÇÃO EM VENDAS
+                MessageBox.Show(produto.Nome);
+            }
+
+            this.Zerarcampos();
         }
+
+        private void inCardapio_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new Cardapio();
+            w.ShowDialog();
+        }
+
+        private void inFechamento_Click(object sender, RoutedEventArgs e)
+        {
+            //FAZER QUER DE SOMA DE TODAS AS VENDAS
+            Window w = new Fechamento();
+            w.ShowDialog();
+        }
+
+        private void inPedido_Click(object sender, RoutedEventArgs e)
+        {
+            Window w = new Pedidos();
+            w.ShowDialog();
+        }
+
+        private void Voltar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Zerarcampos();
+        }
+
+
+        public void Zerarcampos()
+        {
+            Carrinho.Items.Clear();
+            Troco.Text = 0.ToString();
+            Total.Text = 0.ToString();
+            Pago.Text = 0.ToString();
+            Desconto.Text = 0.ToString();
+            Subtotal.Text = 0.ToString();
+        }
+
     }
 }

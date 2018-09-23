@@ -157,5 +157,14 @@
   <ItemGroup>
     <Resource Include="marmitex.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="feb-food-go-06-512.png" />
+    <Resource Include="Refresco_+1.png" />
+    <Resource Include="Refresco_+2.png" />
+    <Resource Include="Refresco_+3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="meal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -89,14 +89,14 @@ namespace WpfApp1
                     case "4":
                         produto.ID = 4;
                         produto.Nome = "Refigerante 1";
-                        produto.Preço = 5;
+                        produto.Preço = 2;
                         produto.Imagem = "TESTE";
                         Carrinho.Items.Add(produto);
                         break;
                     case "5":
                         produto.ID = 5;
                         produto.Nome = "Refigerante 2";
-                        produto.Preço = 2;
+                        produto.Preço = 4;
                         produto.Imagem = "TESTE";
                         Carrinho.Items.Add(produto);
                         break;
@@ -109,9 +109,12 @@ namespace WpfApp1
                         break;
                 }
                 var total = Int32.Parse(Total.Text);
+                var subtotal = Int32.Parse(Subtotal.Text);
                 total = total + produto.Preço;
+                subtotal = subtotal + produto.Preço;
                 Total.Text = total.ToString();
-                }
+                Subtotal.Text = subtotal.ToString();
+            }
             catch{
                 MessageBox.Show("Deu Ruim");
             }
@@ -122,15 +125,58 @@ namespace WpfApp1
             try
             {
                 var total = Int32.Parse(Total.Text);
+                var subtotal = Int32.Parse(Subtotal.Text);
                 Produto selecionado = Carrinho.Items[Carrinho.SelectedIndex] as Produto;
                 total = total - selecionado.Preço;
+                subtotal = subtotal - selecionado.Preço;
                 Total.Text = total.ToString();
+                Subtotal.Text = subtotal.ToString();
                 Carrinho.Items.RemoveAt(Carrinho.Items.IndexOf(Carrinho.SelectedItem));
             }
             catch
             {
                 MessageBox.Show("Selecione um item do carrinho para descarrega-lo");
             }
+        }
+    
+        private void QuandoapertarEnterDescontar(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.Key == Key.Enter)
+                {
+                    var desconto = Int32.Parse(Desconto.Text);
+                    var total = Int32.Parse(Total.Text);
+                    total = total - desconto;
+                    Total.Text = total.ToString();
+                }
+            }catch
+            {
+                MessageBox.Show("Informe somente números inteiros");
+            }
+        }
+
+        private void QuandoapertarEnterPago(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (e.Key == Key.Enter)
+                {
+                    var total = Int32.Parse(Total.Text);
+                    var pago = Int32.Parse(Pago.Text);
+                    total = pago - total;
+                    Troco.Text = total.ToString();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Informe somente números inteiros");
+            }
+        }
+
+        private void FinalizaCompra(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

@@ -10,19 +10,18 @@ namespace PaocomBife.Controller
 {
     class VendaController
     {
-        private readonly ContextoBase contexto;
+        private ContextoBase contexto;
 
         public VendaController()
         {
             contexto = new ContextoBase();
         }
 
-        public Venda AddNewVenda(int valor, Produto produto)
+        public Venda AddNewVenda(Produto produto)
         {
-            var venda = new Venda { Valor = valor, IDProduto = produto, DataVenda= DateTime.Now };
+            var venda = new Venda { Valor = produto.Preço, IDProduto = produto, DataVenda= DateTime.Now };
             contexto.Vendas.Add(venda);
             contexto.SaveChanges();
-
             return venda;
         }
     }

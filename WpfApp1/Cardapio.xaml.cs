@@ -1,4 +1,5 @@
 ﻿using Paocombife.Model;
+using PaocomBife.Controller;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,10 +23,20 @@ namespace PaocomBife
     {
         Produto produto;
 
+        ProdutoController produtocontrole = new ProdutoController();
+
         public Cardapio()
         {
             InitializeComponent();
-            //FAZER QUERY PARA CARREGAR LISTVIEW DE PRODUTOS
+            //FAZER QUERY PARA CARREGAR LISTVIEW DE PRODUTOS OK
+            //var list = produtocontrole.ListProdutos();
+            
+           //Persistencia em tempo de execução
+            var list = produtocontrole.ExibirLista();
+            if (list != null)
+            {
+                ListaCardapio.ItemsSource= list.ToList();
+            }
         }
 
         private void Adicionar_Produto_Click(object sender, RoutedEventArgs e)
@@ -37,8 +48,9 @@ namespace PaocomBife
                 produto.Imagem = "TESTE";
                 produto.Nome = Produto.Text;
                 produto.Preço = Int32.Parse(Preço.Text);
-                //MANDAR FAZER QUERY DE INSERÇÃO DE PRODUTO
-                ListaCardapio.Items.Add(produto);
+                //MANDAR FAZER QUERY DE INSERÇÃO DE PRODUTO ok
+                //produtocontrole.AddNewProduto(produto);
+                ListaCardapio.ItemsSource = produtocontrole.AddNewProduto(produto).ToList();
             }
             catch
             {
@@ -48,9 +60,18 @@ namespace PaocomBife
 
         private void Excluir_Produto_Click(object sender, RoutedEventArgs e)
         {
-            Produto selecionado = ListaCardapio.Items[ListaCardapio.SelectedIndex] as Produto;
-            MessageBox.Show(selecionado.ID.ToString());
+            try
+            {
+
             //QUERY DE EXCLUSÃO
+            Produto selecionado = ListaCardapio.Items[ListaCardapio.SelectedIndex] as Produto;
+            produtocontrole.RemoveProduto(selecionado.ID);
+            MessageBox.Show(selecionado.ID.ToString());
+            }
+            catch
+            {
+                MessageBox.Show("Selecione o item que deseja excluir");
+            }
         }
     }
 }

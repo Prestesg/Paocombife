@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Fechamento = PaocomBife.Fechamento;
+using PaocomBife.Controller;
 
 namespace WpfApp1
 {
@@ -26,18 +27,17 @@ namespace WpfApp1
         Fechamento fechamento;
         Venda venda;
         private List<Produto> produtos;
+        ProdutoController produtocontrole;
+        VendaController vendacontrole;
 
         public MainWindow()
         {
 
             InitializeComponent();
+            //Mandas Carregar Lista de Produtos PARA EXIBIR BOTÕES OK
+            //List<Produto> listaprodutos = produtocontrole.ListProdutos();
 
-            produtos = new List<Produto>();
-            //Mandas Carregar Lista de Produtos PARA EXIBIR BOTÕES
-            Produto marmita = new Produto();
-            marmita.Nome = "Marmita";
-            marmita.Preço = 15;
-            produtos.Add(marmita);
+            //ITERAR LISTA PARA GERAR BOTÕES FALTA
         }
 
         private void CarregarCarrinho(object sender, RoutedEventArgs e)
@@ -48,6 +48,9 @@ namespace WpfApp1
                 produto = new Produto();
                 var buttonTag = ((Button)sender).Tag;
                 string tag = buttonTag.ToString();
+                //Busca produtos de insere no carrinho OK
+                /*produto = produtocontrole.FindProduto(Int32.Parse(tag));
+                Carrinho.Items.Add(produto);*/
 
                 switch (buttonTag)
                 {
@@ -56,44 +59,39 @@ namespace WpfApp1
                         produto.Nome = "Marmita";
                         produto.Preço = 10;
                         produto.Imagem = "TESTE";
-                        Carrinho.Items.Add(produto);
                         break;
                     case "2":
                         produto.ID = 2;
                         produto.Nome = "Buffet Livre";
                         produto.Preço = 12;
                         produto.Imagem = "TESTE";
-                        Carrinho.Items.Add(produto);
                         break;
                     case "3":
                         produto.ID = 3;
                         produto.Nome = "Combo";
                         produto.Preço = 15;
                         produto.Imagem = "TESTE";
-                        Carrinho.Items.Add(produto);
                         break;
                     case "4":
                         produto.ID = 4;
                         produto.Nome = "Refigerante 1";
                         produto.Preço = 2;
                         produto.Imagem = "TESTE";
-                        Carrinho.Items.Add(produto);
                         break;
                     case "5":
                         produto.ID = 5;
                         produto.Nome = "Refigerante 2";
                         produto.Preço = 4;
                         produto.Imagem = "TESTE";
-                        Carrinho.Items.Add(produto);
                         break;
                     case "6":
                         produto.ID = 6;
                         produto.Nome = "Refigerante 3";
                         produto.Preço = 6;
                         produto.Imagem = "TESTE";
-                        Carrinho.Items.Add(produto);
                         break;
                 }
+                Carrinho.Items.Add(produto);
                 var total = Int32.Parse(Total.Text);
                 var subtotal = Int32.Parse(Subtotal.Text);
                 total = total + produto.Preço;
@@ -169,10 +167,10 @@ namespace WpfApp1
 
             foreach (var produto in Carrinho.Items.OfType<Produto>())
             {
-                //MANDAR FAZER QUERY DE INSERÇÃO EM VENDAS
-                MessageBox.Show(produto.Nome);
+                //MANDAR FAZER QUERY DE INSERÇÃO EM VENDAS OK
+                //vendacontrole.AddNewVenda(produto);
+                MessageBox.Show("Adicionou"+ produto.Nome);
             }
-
             this.Zerarcampos();
         }
 

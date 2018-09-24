@@ -7,22 +7,13 @@
         mc:Ignorable="d"
         Title="Cardapio" Height="450" Width="587.766">
     <Grid Margin="0,0,2,0">
-        <ListView x:Name="ListaCardapio" Height="363" VerticalAlignment="Top" Margin="10,46,241,0">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn Header="ID " DisplayMemberBinding="{Binding ID}" Width="30"/>
-                    <GridViewColumn Header="Nome " DisplayMemberBinding="{Binding Nome}" Width="100"/>
-                    <GridViewColumn Header="Preço" DisplayMemberBinding="{Binding Preço}" Width="80" />
-                    <GridViewColumn Header="Imagem" DisplayMemberBinding="{Binding Imagem}" Width="120" />
-                </GridView>
-            </ListView.View>
-        </ListView>
         <Label Content="Nome do Produto" HorizontalAlignment="Left" Margin="340,43,0,0" VerticalAlignment="Top" Width="123"/>
         <Label Content="Preço" HorizontalAlignment="Left" Margin="468,43,-13,0" VerticalAlignment="Top" Width="123"/>
-        <TextBox x:Name="Produto" HorizontalAlignment="Left" Height="23" Margin="343,69,0,0" TextWrapping="Wrap" Text="Digite o nome aqui" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="Preço" HorizontalAlignment="Left" Height="23" Margin="471,69,0,0" TextWrapping="Wrap" Text="Digite o preço aqui" VerticalAlignment="Top" Width="107"/>
+        <TextBox x:Name="Produto" HorizontalAlignment="Left" Height="23" Margin="343,69,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="Preço" HorizontalAlignment="Left" Height="23" Margin="471,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="107"/>
         <Button x:Name="Adicionar_Produto" Content="Adicionar Produto" HorizontalAlignment="Left" Margin="340,110,0,0" VerticalAlignment="Top" Width="115" Click="Adicionar_Produto_Click"/>
-        <Button x:Name="Excluir_Produto" Content="Excluir Produto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="120" Margin="337,135,0,0" Click="Excluir_Produto_Click"/>
+        <Button x:Name="Excluir_Produto" Content="Excluir Produto" HorizontalAlignment="Left" VerticalAlignment="Top" Width="112" Margin="343,135,0,0" Click="Excluir_Produto_Click"/>
+        <DataGrid x:Name="ListaCardapio" HorizontalAlignment="Left" Height="379" Margin="10,30,0,0" VerticalAlignment="Top" Width="325"/>
 
     </Grid>
 </Window>

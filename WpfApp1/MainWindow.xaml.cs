@@ -32,9 +32,34 @@ namespace WpfApp1
 
         public MainWindow()
         {
+                int iRow = -1;
 
             InitializeComponent();
+            foreach(RowDefinition row in Griddebotoes.RowDefinitions)
+            {
+                iRow++;
+                int iCol = -1;
+                foreach (ColumnDefinition col in Griddebotoes.ColumnDefinitions)
+                {
+                    iCol++;
+                    Border panel = new Border();
+                    Grid.SetColumn(panel,iCol);
+                    Grid.SetRow(panel, iRow);
+                    Button botao = new Button();
+                    panel.Child = botao;
+                        /*
+                                < Button x: Name = "Produto" Tag = "1"  HorizontalAlignment = "Left" Margin = "10,36,0,0" VerticalAlignment = "Top" Width = "91" Height = "84" Click = "CarregarCarrinho" >
+                            < StackPanel Width = "91" >
+                                 < Image Source = "marmitex.png" VerticalAlignment = "Top" Height = "29" Width = "36" RenderTransformOrigin = "0.5,0.5" >
+                                          </ Image >
+                                          < Label x: Name = "Nome" HorizontalAlignment = "Center" Content = "Marmita" FontWeight = "Bold" Height = "24" />
+                                                    < Label x: Name = "Valor" HorizontalAlignment = "Left" Content = "Valor: R$10" />
+                                                      </ StackPanel >
+                                                  </ Button >*/
+                }
+            }
             //Mandas Carregar Lista de Produtos PARA EXIBIR BOTÕES OK
+
             //List<Produto> listaprodutos = produtocontrole.ListProdutos();
 
             //ITERAR LISTA PARA GERAR BOTÕES FALTA
@@ -162,7 +187,7 @@ namespace WpfApp1
         {
             var subtotal = Int32.Parse(Subtotal.Text);
             var total = Int32.Parse(Total.Text);
-          var desconto = Int32.Parse(Desconto.Text);
+            var desconto = Int32.Parse(Desconto.Text);
             var pago = Int32.Parse(Pago.Text);
 
             foreach (var produto in Carrinho.Items.OfType<Produto>())

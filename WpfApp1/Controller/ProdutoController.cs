@@ -57,10 +57,13 @@ namespace PaocomBife.Controller
             return produto;
         }
 
-        public Produto ChangeProduto(Produto produto)
+        public Produto ChangeProduto(Produto produtochange)
         {
-            // Função de alteração de dados
-            return produto;
+            Produto produtobase = new Produto();// = contexto.Produtos.Find(produtochange.ID);
+            produtobase.Nome = produtochange.Nome;
+            produtobase.Preço = produtochange.Preço;
+            produtobase.Imagem = produtochange.Imagem;
+            return produtobase;
         }
     }
 }

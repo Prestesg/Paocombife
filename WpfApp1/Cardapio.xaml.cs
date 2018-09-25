@@ -73,5 +73,17 @@ namespace PaocomBife
                 MessageBox.Show("Selecione o item que deseja excluir");
             }
         }
+
+        private void ListaCardapio_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            
+        }
+
+        private void AlterarDadosBotao_Click(object sender, RoutedEventArgs e)
+        {
+            Produto selecionado = ListaCardapio.Items[ListaCardapio.SelectedIndex] as Produto;
+            produtocontrole.ChangeProduto(produto);
+
+        }
     }
 }

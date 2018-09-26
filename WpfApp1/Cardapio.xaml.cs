@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace PaocomBife
 {
-    /// <summary>
-    /// Lógica interna para Cardapio.xaml
-    /// </summary>
     public partial class Cardapio : Window
     {
         Produto produto;
@@ -63,20 +60,16 @@ namespace PaocomBife
             try
             {
 
-            //QUERY DE EXCLUSÃO
+                //QUERY DE EXCLUSÃO
             Produto selecionado = ListaCardapio.Items[ListaCardapio.SelectedIndex] as Produto;
-            produtocontrole.RemoveProduto(selecionado.ID);
             MessageBox.Show(selecionado.ID.ToString());
+          //  produtocontrole.RemoveProduto(selecionado.ID);
+                ListaCardapio.Items.RemoveAt(ListaCardapio.Items.IndexOf(selecionado.ID));
             }
             catch
             {
                 MessageBox.Show("Selecione o item que deseja excluir");
             }
-        }
-
-        private void ListaCardapio_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            
         }
 
         private void AlterarDadosBotao_Click(object sender, RoutedEventArgs e)

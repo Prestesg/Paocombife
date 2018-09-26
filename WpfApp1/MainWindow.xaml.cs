@@ -32,21 +32,90 @@ namespace WpfApp1
 
         public MainWindow()
         {
-                int iRow = -1;
 
             InitializeComponent();
+
+            List<Produto> produtos = new List<Produto>();
+            Produto produto1 = new Produto();
+            produto1.ID = 0;
+            produto1.Nome = "Marmita";
+            produto1.Preço = 10;
+            produto1.Imagem = "TESTE";
+            Produto produto2 = new Produto();
+            produto2.ID = 1;
+            produto2.Nome = "BuffetLivre";
+            produto2.Preço = 12;
+            produto2.Imagem = "TESTE";
+
+            Produto produto3 = new Produto();
+            produto3.ID = 2;
+            produto3.Nome = "Combo";
+            produto3.Preço = 15;
+            produto3.Imagem = "TESTE";
+            Produto produto4 = new Produto();
+            produto4.ID = 3;
+            produto4.Nome = "Refrigerante1";
+            produto4.Preço = 2;
+            produto4.Imagem = "TESTE";
+            Produto produto5 = new Produto();
+            produto5.ID = 4;
+            produto5.Nome = "Refrigerante2";
+            produto5.Preço = 4;
+            produto5.Imagem = "TESTE";
+            Produto produto6 = new Produto();
+            produto6.ID = 5;
+            produto6.Nome = "Refrigerante3";
+            produto6.Preço = 6;
+            produto6.Imagem = "TESTE";
+
+            produtos.Add(produto1);
+            produtos.Add(produto2);
+            produtos.Add(produto3);
+            produtos.Add(produto4);
+            produtos.Add(produto5);
+            produtos.Add(produto6);
+
+            int iRow = -1;
+            int iProdutos = 0;
             foreach(RowDefinition row in Griddebotoes.RowDefinitions)
             {
                 iRow++;
                 int iCol = -1;
                 foreach (ColumnDefinition col in Griddebotoes.ColumnDefinitions)
                 {
+
                     iCol++;
                     Border panel = new Border();
                     Grid.SetColumn(panel,iCol);
                     Grid.SetRow(panel, iRow);
                     Button botao = new Button();
-                    panel.Child = botao;
+                    StackPanel stackpanel = new StackPanel();
+                    Image image = new Image();
+                    Label lblValor = new Label();
+                    Label lblNome = new Label();
+                    lblValor.Content = "R$"+produtos[iProdutos].Preço;
+                    lblValor.HorizontalAlignment = HorizontalAlignment.Left;
+                    lblValor.Height = 24;
+                    lblNome.Content = produtos[iProdutos].Nome;
+                    lblNome.HorizontalAlignment = HorizontalAlignment.Center;
+                    botao.Tag = produtos[iProdutos].ID;
+                    botao.Content = produtos[iProdutos].Nome;
+                    botao.Width = 91;
+                    botao.Height = 84;
+                    botao.Click += CarregarCarrinho;
+                    botao.HorizontalAlignment = HorizontalAlignment.Center;
+                     
+                    //image.Source = new BitmapImage(new Uri("Paocombifeapp://PaocomBife/"+produtos[iProdutos].Imagem)); ;
+                    //stackpanel.Children.Add(image);
+                    stackpanel.Children.Add(lblNome);
+                    stackpanel.Children.Add(lblValor);
+                    stackpanel.Children.Add(botao);
+                    panel.Child = stackpanel;
+
+                    Griddebotoes.Children.Add(panel);
+                    iProdutos++;
+                    
+
                         /*
                                 < Button x: Name = "Produto" Tag = "1"  HorizontalAlignment = "Left" Margin = "10,36,0,0" VerticalAlignment = "Top" Width = "91" Height = "84" Click = "CarregarCarrinho" >
                             < StackPanel Width = "91" >
@@ -76,40 +145,39 @@ namespace WpfApp1
                 //Busca produtos de insere no carrinho OK
                 /*produto = produtocontrole.FindProduto(Int32.Parse(tag));
                 Carrinho.Items.Add(produto);*/
-
-                switch (buttonTag)
+                switch (tag)
                 {
-                    case "1" :
+                    case "0" :
                         produto.ID = 1;
                         produto.Nome = "Marmita";
                         produto.Preço = 10;
                         produto.Imagem = "TESTE";
                         break;
-                    case "2":
+                    case "1":
                         produto.ID = 2;
                         produto.Nome = "Buffet Livre";
                         produto.Preço = 12;
                         produto.Imagem = "TESTE";
                         break;
-                    case "3":
+                    case "2":
                         produto.ID = 3;
                         produto.Nome = "Combo";
                         produto.Preço = 15;
                         produto.Imagem = "TESTE";
                         break;
-                    case "4":
+                    case "3":
                         produto.ID = 4;
                         produto.Nome = "Refigerante 1";
                         produto.Preço = 2;
                         produto.Imagem = "TESTE";
                         break;
-                    case "5":
+                    case "4":
                         produto.ID = 5;
                         produto.Nome = "Refigerante 2";
                         produto.Preço = 4;
                         produto.Imagem = "TESTE";
                         break;
-                    case "6":
+                    case "5":
                         produto.ID = 6;
                         produto.Nome = "Refigerante 3";
                         produto.Preço = 6;
@@ -234,5 +302,21 @@ namespace WpfApp1
             Subtotal.Text = 0.ToString();
         }
 
+        private void teste_Click(object sender, RoutedEventArgs e)
+        {
+            Button btn = new Button();
+
+            btn.Height = 80;
+
+            btn.Width = 150;
+
+            btn.Content = "Click ME";
+
+            btn.Background = new SolidColorBrush(Colors.Orange);
+
+            btn.Foreground = new SolidColorBrush(Colors.Black);
+
+            Griddebotoes.Children.Add(btn);
+        }
     }
 }

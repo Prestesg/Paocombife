@@ -19,7 +19,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="Produto" Tag="1"  HorizontalAlignment="Left" Margin="10,36,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Produto" Tag="1"  HorizontalAlignment="Left" Margin="10,228,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="marmitex.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -27,7 +27,7 @@
                 <Label x:Name="Valor" HorizontalAlignment="Left" Content="Valor: R$10" />
             </StackPanel>
         </Button>
-        <Button x:Name="BuffetLivre" Tag="2" HorizontalAlignment="Left" Margin="114,36,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="BuffetLivre" Tag="2" HorizontalAlignment="Left" Margin="114,228,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="meal.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -35,7 +35,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$12" />
             </StackPanel>
         </Button>
-        <Button x:Name="ComboMarmita" Tag="3" HorizontalAlignment="Left" Margin="221,36,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="ComboMarmita" Tag="3" HorizontalAlignment="Left" Margin="221,228,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="feb-food-go-06-512.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -43,7 +43,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$15" />
             </StackPanel>
         </Button>
-        <Button x:Name="Refrigerante1" Tag="4"  HorizontalAlignment="Left" Margin="10,127,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Refrigerante1" Tag="4"  HorizontalAlignment="Left" Margin="10,317,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="Refresco_+1.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -51,7 +51,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$2" />
             </StackPanel>
         </Button>
-        <Button x:Name="Refrigerante2" Tag="5"  HorizontalAlignment="Left" Margin="114,127,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Refrigerante2" Tag="5"  HorizontalAlignment="Left" Margin="114,317,0,0" VerticalAlignment="Top" Width="91" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="Refresco_+2.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -59,7 +59,7 @@
                 <Label HorizontalAlignment="Left" Content="Valor: R$4" />
             </StackPanel>
         </Button>
-        <Button x:Name="Refrigerante3" Tag="6"  HorizontalAlignment="Left" Margin="221,127,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
+        <Button x:Name="Refrigerante3" Tag="6"  HorizontalAlignment="Left" Margin="221,315,0,0" VerticalAlignment="Top" Width="92" Height="84" Click="CarregarCarrinho">
             <StackPanel Width="91">
                 <Image Source="Refresco_+3.png" VerticalAlignment="Top" Height="29" Width="36" RenderTransformOrigin="0.5,0.5" >
                 </Image>
@@ -71,7 +71,7 @@
         <Label Content="Pago" HorizontalAlignment="Left" Margin="566,341,0,0" VerticalAlignment="Top" Width="55"/>
         <TextBox x:Name="Desconto" HorizontalAlignment="Left" Height="16" Margin="626,319,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="50" KeyDown="QuandoapertarEnterDescontar"/>
         <TextBox x:Name="Pago" HorizontalAlignment="Left" Height="16" Margin="626,346,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="50" KeyDown="QuandoapertarEnterPago"/>
-        <Button Content="Remover do carrinho" HorizontalAlignment="Left" Margin="396,281,0,0" VerticalAlignment="Top" Width="119" Height="27" Click="DescarregarCarrinho"/>
+        <Button Content="Remover do carrinho" HorizontalAlignment="Left" Margin="416,277,0,0" VerticalAlignment="Top" Width="119" Height="27" Click="DescarregarCarrinho"/>
         <Label Content="Total" HorizontalAlignment="Left" Margin="689,340,0,0" VerticalAlignment="Top" Height="31" Width="48" RenderTransformOrigin="0.667,0.226"/>
         <TextBox x:Name="Total" Text="0" HorizontalAlignment="Left" Height="22" Margin="752,344,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="31" IsEnabled="False"/>
         <Label Content="Sub-Total" HorizontalAlignment="Left" Margin="687,312,0,0" VerticalAlignment="Top" Height="31" Width="60"/>
@@ -92,23 +92,18 @@
             </StackPanel>
         </Button>
 
-        <Grid x:Name="Griddebotoes" HorizontalAlignment="Left"   VerticalAlignment="Top" Margin="43,182,0,0" >
+        <Grid x:Name="Griddebotoes" HorizontalAlignment="Left"   VerticalAlignment="Top" Margin="10,36,0,0" Height="260" Width="303" >
             <Grid.ColumnDefinitions >
-                <ColumnDefinition Width="79"/>
-                <ColumnDefinition Width="79"/>
-                <ColumnDefinition Width="84"/>
-                <ColumnDefinition Width="82"/>
-                <ColumnDefinition Width="76"/>
-                <ColumnDefinition Width="73"/>
-                <ColumnDefinition Width="45"/>
+                <ColumnDefinition Width="97"/>
+                <ColumnDefinition Width="108"/>
+                <ColumnDefinition Width="106"/>
+
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="27"/>
-                <RowDefinition Height="64"/>
-                <RowDefinition Height="0"/>
-                <RowDefinition Height="30"/>
-                <RowDefinition Height="31"/>
-                <RowDefinition Height="9"/>
+                <RowDefinition Height="87"/>
+                <RowDefinition Height="87"/>
+
+
 
             </Grid.RowDefinitions>
         </Grid>

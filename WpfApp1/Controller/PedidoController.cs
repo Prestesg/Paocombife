@@ -17,9 +17,10 @@ namespace PaocomBife.Controller
             contexto = new ContextoBase();
         }
 
-       /* public Pedido AddNewPedido(Produto produto)
+        /*
+        public Pedido AddNewPedido(Produto produto)
         {
-            var pedido = new Pedido { IDProduto = produto };
+            Pedido pedido = new Pedido { IDProduto = produto };
             contexto.Vendas.Add(pedido);
             contexto.SaveChanges();
 

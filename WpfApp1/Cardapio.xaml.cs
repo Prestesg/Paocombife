@@ -27,9 +27,7 @@ namespace PaocomBife
             InitializeComponent();
             //FAZER QUERY PARA CARREGAR LISTVIEW DE PRODUTOS OK
             //var list = produtocontrole.ListProdutos();
-            
-           //Persistencia em tempo de execução
-            var list = produtocontrole.ExibirLista();
+            List<Produto> list = new List<Produto>();
             if (list != null)
             {
                 ListaCardapio.ItemsSource= list.ToList();
@@ -45,9 +43,16 @@ namespace PaocomBife
                 produto.Imagem = "TESTE";
                 produto.Nome = Produto.Text;
                 produto.Preço = Int32.Parse(Preço.Text);
+
+                //
+                List<Produto> produtosteste = new List<Produto>();
+                produtosteste.Add(produto);
+                //
+
                 //MANDAR FAZER QUERY DE INSERÇÃO DE PRODUTO ok
-                //produtocontrole.AddNewProduto(produto);
-                ListaCardapio.ItemsSource = produtocontrole.AddNewProduto(produto).ToList();
+                produtocontrole.AddNewProduto(produto);
+                ListaCardapio.ItemsSource = produtosteste.ToList();
+               // ListaCardapio.ItemsSource = produtocontrole.AddNewProduto(produto).ToList();
             }
             catch
             {
@@ -61,10 +66,11 @@ namespace PaocomBife
             {
 
                 //QUERY DE EXCLUSÃO
+              //  var teste = ListaCardapio.Items[ListaCardapio.SelectedIndex];
             Produto selecionado = ListaCardapio.Items[ListaCardapio.SelectedIndex] as Produto;
             MessageBox.Show(selecionado.ID.ToString());
           //  produtocontrole.RemoveProduto(selecionado.ID);
-                ListaCardapio.Items.RemoveAt(ListaCardapio.Items.IndexOf(selecionado.ID));
+                ListaCardapio.Items.RemoveAt(ListaCardapio.Items.IndexOf(ListaCardapio.SelectedItem));
             }
             catch
             {
@@ -76,7 +82,6 @@ namespace PaocomBife
         {
             Produto selecionado = ListaCardapio.Items[ListaCardapio.SelectedIndex] as Produto;
             produtocontrole.ChangeProduto(produto);
-
         }
     }
 }

@@ -34,6 +34,8 @@ namespace WpfApp1
         {
 
             InitializeComponent();
+            //Query qye traz produtos da base
+            //List<Produto> produtos = produtocontrole.ListProdutos();
 
             List<Produto> produtos = new List<Produto>();
             Produto produto1 = new Produto();
@@ -67,13 +69,36 @@ namespace WpfApp1
             produto6.Nome = "Refrigerante3";
             produto6.Preço = 6;
             produto6.Imagem = "TESTE";
+            Produto produto7 = new Produto();
+            produto7.ID = 5;
+            produto7.Nome = "Refrigerante3";
+            produto7.Preço = 6;
+            produto7.Imagem = "TESTE";
 
             produtos.Add(produto1);
             produtos.Add(produto2);
             produtos.Add(produto3);
             produtos.Add(produto4);
             produtos.Add(produto5);
-            produtos.Add(produto6);
+            produtos.Add(produto5);
+            produtos.Add(produto5);
+            produtos.Add(produto5);
+
+
+            int grid = produtos.Count();
+            RowDefinition row1 = new RowDefinition();
+            Griddebotoes.Height = 260;
+            Griddebotoes.Width = 400;
+            Griddebotoes.HorizontalAlignment = HorizontalAlignment.Left;
+            Griddebotoes.VerticalAlignment = VerticalAlignment.Top;
+            
+            for ( int igrid =0 ; igrid < grid; igrid +=4)
+            {
+                RowDefinition row  = new RowDefinition();
+                row.Height = new GridLength(85, GridUnitType.Pixel);
+                Griddebotoes.RowDefinitions.Add(row);
+            } 
+
 
             int iRow = -1;
             int iProdutos = 0;
@@ -83,7 +108,12 @@ namespace WpfApp1
                 int iCol = -1;
                 foreach (ColumnDefinition col in Griddebotoes.ColumnDefinitions)
                 {
-
+                    if (iProdutos > (grid - 1 ))
+                    {
+                        continue;
+                    }
+                    else
+                    {
                     iCol++;
                     Border panel = new Border();
                     Grid.SetColumn(panel,iCol);
@@ -93,6 +123,7 @@ namespace WpfApp1
                     Image image = new Image();
                     Label lblValor = new Label();
                     Label lblNome = new Label();
+                    
                     lblValor.Content = "R$"+produtos[iProdutos].Preço;
                     lblValor.HorizontalAlignment = HorizontalAlignment.Left;
                     lblValor.Height = 24;
@@ -113,25 +144,13 @@ namespace WpfApp1
                     panel.Child = stackpanel;
 
                     Griddebotoes.Children.Add(panel);
+                  
+                    }
                     iProdutos++;
-                    
-
-                        /*
-                                < Button x: Name = "Produto" Tag = "1"  HorizontalAlignment = "Left" Margin = "10,36,0,0" VerticalAlignment = "Top" Width = "91" Height = "84" Click = "CarregarCarrinho" >
-                            < StackPanel Width = "91" >
-                                 < Image Source = "marmitex.png" VerticalAlignment = "Top" Height = "29" Width = "36" RenderTransformOrigin = "0.5,0.5" >
-                                          </ Image >
-                                          < Label x: Name = "Nome" HorizontalAlignment = "Center" Content = "Marmita" FontWeight = "Bold" Height = "24" />
-                                                    < Label x: Name = "Valor" HorizontalAlignment = "Left" Content = "Valor: R$10" />
-                                                      </ StackPanel >
-                                                  </ Button >*/
                 }
             }
-            //Mandas Carregar Lista de Produtos PARA EXIBIR BOTÕES OK
 
-            //List<Produto> listaprodutos = produtocontrole.ListProdutos();
 
-            //ITERAR LISTA PARA GERAR BOTÕES FALTA
         }
 
         private void CarregarCarrinho(object sender, RoutedEventArgs e)
@@ -291,7 +310,6 @@ namespace WpfApp1
             this.Zerarcampos();
         }
 
-
         public void Zerarcampos()
         {
             Carrinho.Items.Clear();
@@ -300,23 +318,6 @@ namespace WpfApp1
             Pago.Text = 0.ToString();
             Desconto.Text = 0.ToString();
             Subtotal.Text = 0.ToString();
-        }
-
-        private void teste_Click(object sender, RoutedEventArgs e)
-        {
-            Button btn = new Button();
-
-            btn.Height = 80;
-
-            btn.Width = 150;
-
-            btn.Content = "Click ME";
-
-            btn.Background = new SolidColorBrush(Colors.Orange);
-
-            btn.Foreground = new SolidColorBrush(Colors.Black);
-
-            Griddebotoes.Children.Add(btn);
         }
     }
 }

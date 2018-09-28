@@ -92,18 +92,15 @@
             </StackPanel>
         </Button>
 
-        <Grid x:Name="Griddebotoes" HorizontalAlignment="Left"   VerticalAlignment="Top" Margin="10,36,0,0" Height="260" Width="303" >
+        <Grid x:Name="Griddebotoes" ShowGridLines="True" HorizontalAlignment="Left"   VerticalAlignment="Top" Margin="10,36,0,0" Height="268" Width="406" >
             <Grid.ColumnDefinitions >
                 <ColumnDefinition Width="97"/>
                 <ColumnDefinition Width="108"/>
                 <ColumnDefinition Width="106"/>
+                <ColumnDefinition Width="106"/>
 
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="87"/>
-                <RowDefinition Height="87"/>
-
-
 
             </Grid.RowDefinitions>
         </Grid>

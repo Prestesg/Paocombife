@@ -5,9 +5,8 @@ namespace PaocomBife.Contexto
 {
     class ContextoBase : DbContext 
     {
-        public ContextoBase() : base("Default")
-        {
-        }
+        public ContextoBase() : base("Default") { }
+
         public DbSet<Venda> Vendas { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Fechamento> Fechamentos { get; set; }
